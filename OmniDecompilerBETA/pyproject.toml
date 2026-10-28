@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bsp2vmf"
+dynamic = ["version"]
+description = "Decompile GoldSrc, Quake and Source engine BSP maps into Hammer VMF or Valve 220 MAP files."
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["bsp", "vmf", "hammer", "source engine", "goldsrc", "half-life", "decompiler"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: Games/Entertainment",
+]
+
+[project.scripts]
+bsp2vmf = "bsp2vmf.__main__:main"
+
+[tool.setuptools]
+packages = ["bsp2vmf"]
+
+[tool.setuptools.dynamic]
+version = { attr = "bsp2vmf.__version__" }
